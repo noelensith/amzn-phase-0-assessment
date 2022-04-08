@@ -1,5 +1,32 @@
 // 1. Write your functions here
+const katzDeli = []
 
+function line(katzDeli) {
+    if (katzDeli.length > 0) {
+        let result = ''
+        for (const i = 0; i < katzDeli.length; i++) {
+            result += (i + 1) + '. ' + katzDeli[i] + ', '
+        }
+        result = result.slice(0, -2)
+        return `The line is currently: ${result}`
+    }
+    else {
+        return 'The line is currently empty.'
+    }
+}
+
+function takeANumber(katzDeli, name) {
+    katzDeli.push(name)
+    return `Welcome, ${name}. You are number ${katzDeli.length} in line.`
+}
+
+function nowServing(katzDeli) {
+    if (katzDeli.length > 0) {
+        console.log('Currently serving' + katzDeli.shift() + '.')
+    } else {
+        console.log('There is nobody waiting to be served!')
+    }
+}
 
 // 2. Example Usage
 
